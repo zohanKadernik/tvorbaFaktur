@@ -1,0 +1,38 @@
+﻿<Window x:Class="tvorbaFaktur.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tvorbaFaktur"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="511" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- LEVÁ STRANA - KLIENTI -->
+        <StackPanel Margin="10">
+            <TextBlock FontSize="18" Text="Seznam klientů" />
+
+            <ListBox x:Name="ClientList" Height="300" Margin="0,5,0,10"/>
+
+            <Button x:Name="AddClientButton" Content="Přidat klienta" Height="35" Margin="0,5,0,5"/>
+            <Button x:Name="RemoveClientButton" Content="Smazat klienta" Height="35" Margin="0,5,0,5"/>
+        </StackPanel>
+
+        <!-- PRAVÁ STRANA - FAKTURY -->
+        <StackPanel Grid.Column="1" Margin="10">
+            <TextBlock FontSize="18" Text="Seznam faktur"/>
+
+            <ListBox x:Name="InvoiceList" Height="300" Margin="0,5,0,10"/>
+
+
+            <Button x:Name="CreateInvoiceButton" Content="Vytvořit fakturu" Height="35" Margin="0,5,0,5" IsEnabled="False"/>
+            <Button x:Name="SaveInvoiceButton" Content="Uložit fakturu (.txt)" Height="35" Margin="0,5,0,5" IsEnabled="False"/>
+            <Button x:Name="RemoveInvoiceButton" Content="Smazat fakturu" Height="35" Margin="0,5,0,5" IsEnabled="False"/>
+        </StackPanel>
+    </Grid>
+
+</Window>

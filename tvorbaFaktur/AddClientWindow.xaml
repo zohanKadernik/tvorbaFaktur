@@ -1,0 +1,42 @@
+﻿<Window x:Class="tvorbaFaktur.AddClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Přidat klienta" Height="300" Width="400"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Jméno a příjmení:"/>
+        <TextBox x:Name="NameText" Grid.Row="1" Margin="0,2,0,10"/>
+
+        <TextBlock Text="IČO:" Grid.Row="2"/>
+        <TextBox x:Name="ICOText" Grid.Row="3" Margin="0,2,0,10"/>
+
+        <TextBlock Text="Datum narození:" Grid.Row="4"/>
+        <DatePicker x:Name="BirthDatePicker" Grid.Row="5" Margin="0,2,0,10"/>
+
+        <TextBlock Text="Adresa:" Grid.Row="6"/>
+        <TextBox x:Name="AddressText" Grid.Row="7" Margin="0,2,0,10"/>
+
+        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Content="Uložit" Width="80" Click="Save_Click" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="0"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button Content="Zrušit" Width="80" Click="Cancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

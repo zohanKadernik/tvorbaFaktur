@@ -1,0 +1,49 @@
+﻿<Window x:Class="tvorbaFaktur.AddInvoiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Vytvořit fakturu" Height="450" Width="500"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+
+    <Grid Margin="15">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Číslo faktury:" Grid.Row="0"/>
+        <TextBox x:Name="InvoiceNumberText" Grid.Row="1" Margin="0,0,0,10"/>
+
+        <TextBlock Text="Datum splatnosti:" Grid.Row="2"/>
+        <DatePicker x:Name="DueDatePicker" Grid.Row="3" Margin="0,0,0,10"/>
+
+        <TextBlock Text="Služba:" Grid.Row="4"/>
+        <StackPanel Grid.Row="5" Orientation="Horizontal">
+            <ComboBox x:Name="ServiceCombo" Width="160" Margin="0,0,10,0"
+                      SelectionChanged="ServiceCombo_SelectionChanged">
+                <ComboBoxItem Content="Finanční poradenství"/>
+                <ComboBoxItem Content="Energetické poradenství"/>
+            </ComboBox>
+
+            <TextBox x:Name="RateText" Width="80" Margin="0,0,10,0" IsReadOnly="True"/>
+            <TextBox x:Name="HoursText" Width="80" Margin="0,0,10,0"/>
+            <Button x:Name="AddItemButton" Content="Přidat položku" Click="AddItemButton_Click"/>
+        </StackPanel>
+
+        <ListBox x:Name="ItemsList" Grid.Row="6" Margin="0,10,0,10" Height="160"/>
+
+        <TextBlock x:Name="TotalText" Grid.Row="7" FontSize="16" Text="Celkem: 0 Kč" HorizontalAlignment="Right"/>
+
+        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Uložit" Width="100" Margin="0,0,10,0" Click="SaveInvoice_Click"/>
+            <Button Content="Zrušit" Width="100" Click="CancelInvoice_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
